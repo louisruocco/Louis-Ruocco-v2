@@ -5,12 +5,24 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow-x: hidden;
+    background: black;
 }
 
 h1, h2 {
     font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    color: white;
+    margin-left: 250px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
 }
 
 a {
@@ -18,31 +30,51 @@ a {
     color:rgb(170, 58, 77);
 }
 
+p {
+    text-align: justify;
+    margin-left: 250px;
+    margin-right: 100px;
+    padding-bottom: 100px;
+    padding-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+hr {
+    width: 30%;
+}
+
+
 .background {
     display: grid;
     grid-template-columns: repeat(10, auto);
 }
 
-.background div {
+.background-div {
     background:rgb(20, 20, 20);
-    height: 100vh;
-    transition: background-color 1s
+    height: 130vh;
+    transition: background-color 1s;
+}
+
+.nav {
+    opacity: 0;
 }
 
 .nav ul {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    width: 100px;
+    width: 120px;
     height: 100%;
-    background:rgb(12, 12, 12);
+    background:rgb(9, 9, 9);
 }
 
-.nav {
-    opacity: 0;
+.links {
+    margin-right: 40px;
 }
 
 .links {
@@ -79,6 +111,35 @@ a {
     font-size: 20px;
 }
 
+.about {
+    padding-bottom: 400px;
+}
+
+.about-title {
+    opacity: 0;
+    padding-bottom: 10px;
+}
+
+.about-text {
+    opacity: 0;
+    margin-left: 230px;
+    margin-bottom: 0;
+}
+
+.about ul {
+    color: white;
+    margin-left: 300px;
+    font-family: 'Lato', sans-serif;
+}
+
+.selfie {
+    width: 20%;
+    float: right;
+    margin: 40px;
+    border-radius: 10px;
+    opacity: 0;
+}
+
 .appear {
     opacity: 1;
     transition: 2s ease;
@@ -96,4 +157,23 @@ a {
     opacity: 1;
     transition: .75s ease;
     transform: translateX(20px);
+}
+
+.slide-in-alt {
+    color: white;
+    opacity: 1;
+    transition: .75s ease;
+    transform: translateX(-20px);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background:rgb(9, 9, 9);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:rgb(29, 29, 29);
 }

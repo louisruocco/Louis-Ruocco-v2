@@ -7,13 +7,13 @@ let num = 0;
 grids.forEach(grid => {
     setTimeout(() => {
         grid.style.backgroundColor = "black";
-    }, num += 100)
+    }, num += 90)
 });
 
 links.forEach(link => {
     setTimeout(() => {
-        link.classList.add("appear");
-    }, num += 500)
+        link.classList.add("slide-in");
+    }, num += 400)
 })
 
 setTimeout(() => {
@@ -39,10 +39,24 @@ function slideIn (element, top){
 window.addEventListener("load", () => {
     const title = document.querySelector(".title");
     const subtitle = document.querySelector(".subtitle");
+        
     setTimeout(() => {
         pushDownAppear(title, 0);
-    }, 4000)
+    }, 3500)
     setTimeout(() => {
         slideIn(subtitle, 0);
-    }, 5000)
+    }, 4500)
+})
+
+window.addEventListener("scroll", () => {
+    const aboutTitle = document.querySelector(".about-title");
+    const aboutText = document.querySelector(".about-text");
+    const selfie = document.querySelector(".selfie");
+    pushDownAppear(aboutTitle, 2);
+    setTimeout(() => {
+        aboutText.classList.add("slide-in")
+    }, 1500)
+    setTimeout(() => {
+        selfie.classList.add("slide-in-alt");
+    }, 2500)
 })
