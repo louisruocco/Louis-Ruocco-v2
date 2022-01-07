@@ -1,187 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
 
 * {
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
+body {
+    overflow-x: hidden;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
     text-decoration: none;
+    color:rgb(170, 58, 77);
 }
 
-p {
-    font-size: 20px;
-    text-align: justify;
+.background {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
 }
 
-hr {
-    width: 40%;
-    text-align: left;
-}
-
-h2, h3 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 30px;
-}
-
-h1 {
-    font-size: 50px;
-    font-family: 'Rajdhani', sans-serif;
-}
-
-.container {
-    background: black;
-    width: 100%;
+.background div {
+    background:rgb(20, 20, 20);
     height: 100vh;
-}
-
-.overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: black;
-    opacity: .4;
-}
-
-.title {
-    position: absolute;
-    color: white;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.title span {
-    color: seagreen;
-}
-
-.title a {
-    background: none;
-    text-decoration: none;
-    color: white;
-    margin-top: 50px;
-    border: 1px solid white;
-    padding: 20px;
-    transition: .2s ease;
-}
-
-.title a:hover {
-    color: seagreen;
-    border: 1px solid seagreen;
-    transform: scale(1.15);
-    transition: .2s ease;
-}
-
-.nav {
-    position: sticky;
-    top: 0px;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.774);
-    z-index: 1;
+    transition: background-color 1s
 }
 
 .nav ul {
+    position: absolute;
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 50%;
-    list-style: none;
-    color: white;
-}
-
-.nav li {
-    margin: 20px;
-    font-size: 18px;
-    padding-bottom: -10px;
-}
-
-.content {
-    padding: 50px;
-    margin: auto;
-    max-width: 60%;
-}
-
-.content div {
-    margin-bottom: 500px;
-}
-
-.content h2 {
-    text-align: left;
-}
-
-.about-title, 
-.portfolio-title {
-    opacity: 0;
-}
-
-.about-text, 
-.portfolio-text {
-    opacity: 0;
-
-}
-
-.selfie {
-    float: right;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
-    border-radius: 10px;
-    width: 25%;
-    z-index: -1;
-}
-
-.projects {
-    margin: 200px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 250px 250px 250px;
-    grid-template-rows: 100px 100px 100px;
-    column-gap: 100px;
-    row-gap: 350px;
-    opacity: 0;
-}
-
-.project {
-    background: seagreen;
-    padding: 50px;
-    width: 200px;
-    height: 300px;
-    border-radius: 10px;
-    display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin: auto;
+    width: 100px;
+    height: 100%;
+    background:rgb(12, 12, 12);
 }
 
-.desc {
+.nav {
     opacity: 0;
+}
+
+.links {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    opacity: 0;
+}
+
+.title {
+    width: 100%;
+    top: 40%;
+    left: 250px;
+    transition: 1s ease;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    font-size: 25px;
+}
+
+.title span {
+    color: rgb(170, 58, 77) 
+}
+
+.subtitle {
+    width: 100%;
+    top: 50%;
+    left: 250px;
+    transition: 1s ease;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    padding-right: 40px;
+    font-size: 20px;
 }
 
 .appear {
-    transition: 1s ease;
     opacity: 1;
+    transition: .75s ease;
 }
 
-.slide {
-    transition: 1s ease;
+.push-down-appear {
+    color: white;
     opacity: 1;
-    transform: translateX(60px);
+    transition: .75s ease;
+    transform: translateY(20px);
 }
 
-.slide-other {
-    transition: 1s ease;
+.slide-in {
+    color: white;
     opacity: 1;
-    transform: translateX(-60px);
+    transition: .75s ease;
+    transform: translateX(20px);
 }
