@@ -81,7 +81,7 @@ a {
 
 .appear {
     opacity: 1;
-    transition: .75s ease;
+    transition: 2s ease;
 }
 
 .push-down-appear {

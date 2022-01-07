@@ -12,10 +12,13 @@ grids.forEach(grid => {
 
 links.forEach(link => {
     setTimeout(() => {
-        nav.classList.add("appear");
         link.classList.add("appear");
     }, num += 500)
 })
+
+setTimeout(() => {
+    nav.classList.add("appear");
+}, 750)
 
 function pushDownAppear (element, top){
     const topPosition = element.getBoundingClientRect().top;
@@ -38,8 +41,8 @@ window.addEventListener("load", () => {
     const subtitle = document.querySelector(".subtitle");
     setTimeout(() => {
         pushDownAppear(title, 0);
-    }, 3500)
+    }, 4000)
     setTimeout(() => {
         slideIn(subtitle, 0);
-    }, 4500)
+    }, 5000)
 })
