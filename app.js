@@ -55,8 +55,8 @@ window.addEventListener("scroll", () => {
     pushDownAppear(aboutTitle, 2);
     setTimeout(() => {
         aboutText.classList.add("slide-in")
-    }, 1500)
+    }, 2500)
     setTimeout(() => {
         selfie.classList.add("slide-in-alt");
-    }, 2500)
+    }, 3500)
 })
