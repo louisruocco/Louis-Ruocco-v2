@@ -1,25 +1,3 @@
-const grids = document.querySelectorAll(".background-div");
-const links = document.querySelectorAll(".links");
-const nav = document.querySelector(".nav");
-
-let num = 0;
-
-grids.forEach(grid => {
-    setTimeout(() => {
-        grid.style.backgroundColor = "black";
-    }, num += 90)
-});
-
-links.forEach(link => {
-    setTimeout(() => {
-        link.classList.add("slide-in");
-    }, num += 400)
-})
-
-setTimeout(() => {
-    nav.classList.add("appear");
-}, 750)
-
 function pushDownAppear (element, top){
     const topPosition = element.getBoundingClientRect().top;
     const windowPosition = window.innerHeight / top;
@@ -36,9 +14,38 @@ function slideIn (element, top){
     }
 }
 
+function slideInAlt (element, top){
+    const topPosition = element.getBoundingClientRect().top;
+    const windowPosition = window.innerHeight / top;
+    if(topPosition < windowPosition){
+        element.classList.add("slide-in-alt");
+    }
+}
+
 window.addEventListener("load", () => {
     const title = document.querySelector(".title");
     const subtitle = document.querySelector(".subtitle");
+    const grids = document.querySelectorAll(".background-div");
+    const links = document.querySelectorAll(".links");
+    const nav = document.querySelector(".nav");
+
+    let num = 0;
+
+    grids.forEach(grid => {
+        setTimeout(() => {
+            grid.style.backgroundColor = "black";
+        }, num += 90)
+    });
+
+    links.forEach(link => {
+        setTimeout(() => {
+            link.classList.add("slide-in");
+        }, num += 400)
+    })
+
+    setTimeout(() => {
+        nav.classList.add("appear");
+    }, 750)
         
     setTimeout(() => {
         pushDownAppear(title, 0);
@@ -53,10 +60,6 @@ window.addEventListener("scroll", () => {
     const aboutText = document.querySelector(".about-text");
     const selfie = document.querySelector(".selfie");
     pushDownAppear(aboutTitle, 2);
-    setTimeout(() => {
-        aboutText.classList.add("slide-in")
-    }, 2500)
-    setTimeout(() => {
-        selfie.classList.add("slide-in-alt");
-    }, 3500)
+    slideIn(aboutText, 2.5);
+    slideInAlt(selfie, 2.5);
 })
