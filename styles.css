@@ -81,6 +81,12 @@ hr {
 .nav i {
     font-size: 20px;
     padding-bottom: 10px;
+    transition: .5s ease;
+}
+
+.nav i:hover {
+    transition: .2s ease;
+    transform: scale(1.25);
 }
 
 .nav h5 {
@@ -171,6 +177,11 @@ hr {
 .appear {
     opacity: 1;
     transition: 2s ease;
+}
+
+.nav-appear {
+    opacity: 1;
+    transition: .3s ease;
 }
 
 .push-down-appear {

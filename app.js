@@ -1,3 +1,5 @@
+const icons = document.querySelectorAll(".nav i");
+
 function pushDownAppear (element, top){
     const topPosition = element.getBoundingClientRect().top;
     const windowPosition = window.innerHeight / top;
@@ -62,4 +64,21 @@ window.addEventListener("scroll", () => {
     pushDownAppear(aboutTitle, 2);
     slideIn(aboutText, 2.5);
     slideInAlt(selfie, 2.5);
+});
+
+icons.forEach(icon => {
+    icon.addEventListener("mouseover", (e) => {
+        const parent = e.target.parentElement
+        if(parent.tagName == "A"){
+            const desc = parent.children[1]
+            desc.style.transition = ".5s ease"
+            desc.style.opacity = 1;
+        }
+
+        icon.addEventListener("mouseout", () => {
+            const desc = parent.children[1];
+            desc.style.transition = ".5s ease"
+            desc.style.opacity = 0;
+        })
+    })
 })
