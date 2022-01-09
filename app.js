@@ -63,7 +63,7 @@ window.addEventListener("scroll", () => {
     const selfie = document.querySelector(".selfie");
     pushDownAppear(aboutTitle, 2);
     slideIn(aboutText, 2.5);
-    slideInAlt(selfie, 2.5);
+    slideInAlt(selfie, 2.25);
 });
 
 icons.forEach(icon => {
@@ -71,13 +71,13 @@ icons.forEach(icon => {
         const parent = e.target.parentElement
         if(parent.tagName == "A"){
             const desc = parent.children[1]
-            desc.style.transition = ".5s ease"
+            desc.style.transition = "1s ease"
             desc.style.opacity = 1;
         }
 
         icon.addEventListener("mouseout", () => {
             const desc = parent.children[1];
-            desc.style.transition = ".5s ease"
+            desc.style.transition = "1s ease"
             desc.style.opacity = 0;
         })
     })
