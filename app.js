@@ -1,4 +1,5 @@
 const icons = document.querySelectorAll(".nav i");
+const project = document.querySelectorAll(".project");
 
 function pushDownAppear (element, top){
     const topPosition = element.getBoundingClientRect().top;
@@ -22,6 +23,23 @@ function slideInAlt (element, top){
     if(topPosition < windowPosition){
         element.classList.add("slide-in-alt");
     }
+}
+
+function elementAppear(element){
+    element.addEventListener("mouseover", (e) => {
+        const parent = e.target.parentElement
+        if(parent.tagName == "A"){
+            const desc = parent.children[1]
+            desc.style.transition = "1s ease"
+            desc.style.opacity = 1;
+        }
+
+        element.addEventListener("mouseout", () => {
+            const desc = parent.children[1];
+            desc.style.transition = "1s ease"
+            desc.style.opacity = 0;
+        })
+    })
 }
 
 window.addEventListener("load", () => {
@@ -79,6 +97,21 @@ icons.forEach(icon => {
             const desc = parent.children[1];
             desc.style.transition = "1s ease"
             desc.style.opacity = 0;
+        })
+    })
+})
+
+project.forEach(box => {
+    box.addEventListener("mouseover", (e) => {
+        const parent = e.target.parentElement
+        if(parent.classList == "project"){
+            const desc = parent.children[1]
+            desc.classList.add("push-down-appear");
+        }
+
+        box.addEventListener("mouseout", () => {
+            const desc = parent.children[1];
+            desc.classList.remove("push-down-appear");
         })
     })
 })

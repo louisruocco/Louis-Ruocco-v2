@@ -187,7 +187,6 @@ hr {
 
 .projects div {
     margin-bottom: 25px;
-
 }
 
 .project {
@@ -195,6 +194,7 @@ hr {
     text-align: justify;
     padding: 20px;
     border-radius: 10px;
+    height: 300px;
 }
 
 .project h4 {
@@ -211,6 +211,7 @@ hr {
 
 .project-text {
     opacity: 0;
+    transition: .75s ease;
 }
 
 .appear {
