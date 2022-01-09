@@ -1,6 +1,8 @@
 const icons = document.querySelectorAll(".nav i");
 const project = document.querySelectorAll(".project");
 
+let num = 0;
+
 function pushDownAppear (element, top){
     const topPosition = element.getBoundingClientRect().top;
     const windowPosition = window.innerHeight / top;
@@ -49,8 +51,6 @@ window.addEventListener("load", () => {
     const links = document.querySelectorAll(".links");
     const nav = document.querySelector(".nav");
 
-    let num = 0;
-
     grids.forEach(grid => {
         setTimeout(() => {
             grid.style.backgroundColor = "black";
@@ -70,18 +70,36 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         pushDownAppear(title, 0);
     }, 3500)
+
     setTimeout(() => {
         slideIn(subtitle, 0);
     }, 4500)
+
 })
 
 window.addEventListener("scroll", () => {
     const aboutTitle = document.querySelector(".about-title");
     const aboutText = document.querySelector(".about-text");
     const selfie = document.querySelector(".selfie");
+    const portfolioTitle = document.querySelector(".portfolio-title");
+    const portfolioText = document.querySelector(".portfolio-text");
+
     pushDownAppear(aboutTitle, 2);
+    pushDownAppear(portfolioTitle, 2);
+    
     slideIn(aboutText, 2.5);
     slideInAlt(selfie, 2.25);
+    slideIn(portfolioText, 2.5);
+ 
+    project.forEach(box => {
+        const topPosition = box.getBoundingClientRect().top;
+        const windowPosition = window.innerHeight / 0;
+        if(topPosition < windowPosition){
+            setTimeout(() => {
+                box.classList.add("slide-in");
+            }, num += 200)
+        }
+    })
 });
 
 icons.forEach(icon => {
@@ -102,16 +120,13 @@ icons.forEach(icon => {
 })
 
 project.forEach(box => {
-    box.addEventListener("mouseover", (e) => {
-        const parent = e.target.parentElement
-        if(parent.classList == "project"){
-            const desc = parent.children[1]
-            desc.classList.add("push-down-appear");
-        }
+    box.addEventListener("mouseover", () => {
+        box.style.marginTop = "-20px"
+        box.style.transition = ".1s ease";
+    })
 
-        box.addEventListener("mouseout", () => {
-            const desc = parent.children[1];
-            desc.classList.remove("push-down-appear");
-        })
+    box.addEventListener("mouseout", () => {
+        box.style.marginTop = "0px"
+        box.style.transition = ".3s ease";
     })
 })

@@ -79,7 +79,7 @@ hr {
 }
 
 .nav i {
-    font-size: 20px;
+    font-size: 130%;
     padding-bottom: 20px;
     transition: .5s ease;
 }
@@ -144,22 +144,20 @@ hr {
     margin-left: 230px;
 }
 
-.about-title {
+.about-title, 
+.portfolio-title {
     padding-bottom: 10px;
     opacity: 0;
 }
 
-.about-text {
+.about-text, 
+.portfolio-text {
     opacity: 0;
     margin-bottom: 0;
 }
 
 .about-text a {
     transition: .2s ease;
-}
-
-.portfolio-text {
-    padding-left: 20px;
 }
 
 .content a:hover {
@@ -189,12 +187,18 @@ hr {
     margin-bottom: 25px;
 }
 
+.project a {
+    z-index: 1;
+}
+
 .project {
     background: rgb(170, 58, 77);
     text-align: justify;
+    height: 300px;
     padding: 20px;
     border-radius: 10px;
-    height: 300px;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .project h4 {
@@ -206,12 +210,7 @@ hr {
 .project p {
     width: 100%;
     margin-left: 0;
-    font-size: 18px;
-}
-
-.project-text {
-    opacity: 0;
-    transition: .75s ease;
+    font-size: 16px;
 }
 
 .appear {
