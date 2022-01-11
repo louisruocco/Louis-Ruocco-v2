@@ -27,23 +27,6 @@ function slideInAlt (element, top){
     }
 }
 
-function elementAppear(element){
-    element.addEventListener("mouseover", (e) => {
-        const parent = e.target.parentElement
-        if(parent.tagName == "A"){
-            const desc = parent.children[1]
-            desc.style.transition = "1s ease"
-            desc.style.opacity = 1;
-        }
-
-        element.addEventListener("mouseout", () => {
-            const desc = parent.children[1];
-            desc.style.transition = "1s ease"
-            desc.style.opacity = 0;
-        })
-    })
-}
-
 window.addEventListener("load", () => {
     const title = document.querySelector(".title");
     const subtitle = document.querySelector(".subtitle");
@@ -69,11 +52,11 @@ window.addEventListener("load", () => {
         
     setTimeout(() => {
         pushDownAppear(title, 0);
-    }, 3500)
+    }, 2750)
 
     setTimeout(() => {
         slideIn(subtitle, 0);
-    }, 4500)
+    }, 3750)
 
 })
 
@@ -83,23 +66,36 @@ window.addEventListener("scroll", () => {
     const selfie = document.querySelector(".selfie");
     const portfolioTitle = document.querySelector(".portfolio-title");
     const portfolioText = document.querySelector(".portfolio-text");
+    const cvTitle = document.querySelector(".cv-title");
+    const cvText = document.querySelector(".cv-text");
+    const cvImage = document.querySelector(".cv-image");
 
-    pushDownAppear(aboutTitle, 2);
-    pushDownAppear(portfolioTitle, 2);
-    
-    slideIn(aboutText, 2.5);
-    slideInAlt(selfie, 2.25);
-    slideIn(portfolioText, 2.5);
- 
-    project.forEach(box => {
-        const topPosition = box.getBoundingClientRect().top;
-        const windowPosition = window.innerHeight / 0;
-        if(topPosition < windowPosition){
+    pushDownAppear(aboutTitle, 1.5);
+    setTimeout(() => {
+        slideIn(aboutText, 1.5);
+        slideInAlt(selfie, 1.5);
+    }, 1500)
+
+    pushDownAppear(portfolioTitle, 1.5);
+    setTimeout(() => {
+        slideIn(portfolioText, 1.5);
+    }, 1500)
+
+    const topPosition = portfolioTitle.getBoundingClientRect().bottom;
+    const windowPosition = window.innerHeight / 1;
+    if(topPosition < windowPosition){
+        project.forEach(box => {
             setTimeout(() => {
                 box.classList.add("slide-in");
-            }, num += 200)
-        }
-    })
+            }, num += 100)
+        })
+    }
+
+    pushDownAppear(cvTitle, 1.5);
+    setTimeout(() => {
+        slideIn(cvText, 1.5);
+        slideIn(cvImage, 1.5);
+    }, 1500)
 });
 
 icons.forEach(icon => {
