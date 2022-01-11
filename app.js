@@ -1,5 +1,6 @@
 const icons = document.querySelectorAll(".nav i");
 const project = document.querySelectorAll(".project");
+const mailtoBtn = document.querySelector(".submit-btn");
 
 let num = 0;
 
@@ -33,6 +34,7 @@ window.addEventListener("load", () => {
     const grids = document.querySelectorAll(".background-div");
     const links = document.querySelectorAll(".links");
     const nav = document.querySelector(".nav");
+    const link = document.querySelector(".link");
 
     grids.forEach(grid => {
         setTimeout(() => {
@@ -52,11 +54,15 @@ window.addEventListener("load", () => {
         
     setTimeout(() => {
         pushDownAppear(title, 0);
-    }, 2750)
+    }, 3000)
 
     setTimeout(() => {
         slideIn(subtitle, 0);
-    }, 3750)
+    }, 4000)
+
+    setTimeout(() => {
+        slideInAlt(link, 0);
+    }, 4500)
 
 })
 
@@ -69,6 +75,8 @@ window.addEventListener("scroll", () => {
     const cvTitle = document.querySelector(".cv-title");
     const cvText = document.querySelector(".cv-text");
     const cvImage = document.querySelector(".cv-image");
+    const contactTitle = document.querySelector(".contact-title");
+    const contactText = document.querySelector(".contact-text");
 
     pushDownAppear(aboutTitle, 1.5);
     setTimeout(() => {
@@ -87,7 +95,7 @@ window.addEventListener("scroll", () => {
         project.forEach(box => {
             setTimeout(() => {
                 box.classList.add("slide-in");
-            }, num += 100)
+            }, num += 150)
         })
     }
 
@@ -95,6 +103,12 @@ window.addEventListener("scroll", () => {
     setTimeout(() => {
         slideIn(cvText, 1.5);
         slideIn(cvImage, 1.5);
+    }, 1500)
+
+    pushDownAppear(contactTitle, 1.5);
+    setTimeout(() => {
+        slideIn(contactText, 1.5);
+        mailtoBtn.classList.add("appear");
     }, 1500)
 });
 
@@ -125,4 +139,8 @@ project.forEach(box => {
         box.style.marginTop = "0px"
         box.style.transition = ".3s ease";
     })
+})
+
+mailtoBtn.addEventListener("click", () => {
+    window.open("mailto:louisruocco1@gmail.com")
 })
