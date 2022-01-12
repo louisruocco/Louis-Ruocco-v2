@@ -144,3 +144,13 @@ project.forEach(box => {
 mailtoBtn.addEventListener("click", () => {
     window.open("mailto:louisruocco1@gmail.com")
 })
+
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const navLinks = document.querySelector(".nav-links");
+    burger.addEventListener("click", () => {
+        navLinks.classList.toggle("nav-active");
+    })
+}
+
+navSlide();
