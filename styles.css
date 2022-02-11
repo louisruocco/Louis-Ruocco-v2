@@ -32,7 +32,6 @@ a {
 p {
     text-align: justify;
     margin-right: 100px;
-    padding-bottom: 100px;
     padding-top: 20px;
     font-family: 'Lato', sans-serif;
     font-size: 25px;
@@ -66,7 +65,7 @@ hr {
     flex-direction: column;
     align-items: center;
     margin: auto;
-    width: 5vw;
+    width: 4vw;
     height: 100vh;
     background:rgb(18, 18, 18);
 }
@@ -186,13 +185,14 @@ hr {
 .projects {
     display: grid;
     grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 500px;
     justify-content: center;
     align-items: center;
     column-gap: 25px;
 }
 
 .projects div {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .project a {
@@ -202,7 +202,7 @@ hr {
 .project {
     background: rgb(170, 58, 77);
     text-align: justify;
-    height: 400px;
+    height: 350px;
     padding: 20px;
     border-radius: 10px;
     opacity: 0;
@@ -220,6 +220,7 @@ hr {
 .project p {
     width: 100%;
     margin-left: 0;
+    margin-bottom: 0;
     font-size: 16px;
 }
 
@@ -262,7 +263,6 @@ hr {
     color: white;
     padding: 30px;
     font-size: 17px;
-    transition: .7s ease;
     font-family: 'Lato', sans-serif;
     opacity: 0;
 }
@@ -276,58 +276,39 @@ hr {
 }
 
 .socials {
-    margin-bottom: 250px !important;
     display: flex;
-    width: 20%;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px !important; 
 }
+
 
 .socials a {
     font-size: 40px;
+    margin: 5%;
 }
 
-.github {
+.github,
+.linkedin, 
+.insta  {
     transition: .2s ease;
 }
 
 .github:hover {
-    color: white !important;
     transition: .2s ease;
     transform: scale(1.25);
-}
-
-.linkedin {
-    transition: .2s ease;
+    color: white !important;
 }
 
 .linkedin:hover {
-    color: rgb(0, 60, 255) !important;
     transition: .2s ease;
     transform: scale(1.25);
-}
-
-.insta {
-    transition: .2s ease;
+    color: rgb(17, 83, 228) !important;
 }
 
 .insta:hover {
-    color: rgb(114, 39, 51) !important;
     transition: .2s ease;
     transform: scale(1.25);
-}
-
-.burger {
-    display: none;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color:rgb(170, 58, 77);
-    margin: 5px;
 }
 
 .nav-active {
@@ -362,7 +343,7 @@ hr {
     color: white;
     opacity: 1;
     transition: .75s ease;
-    transform: translateX(-60px);
+    padding-top: -60px;
 }
 
 ::-webkit-scrollbar {
@@ -379,19 +360,26 @@ hr {
 
 }
 
-@media screen and (max-width: 400px){
-    .nav h5 {
-        font-size: 8px !important;
-    }
+@media screen and (max-width: 500px){
+    .nav-links
     .title,
     .subtitle{
-        margin-left: 30px !important;
+        margin-left: 20px !important;
     }
 
     .link,
     .content {
-        margin-left: 80px !important;
+        margin-left: 20px !important;
 
+    }
+
+    .content {
+        margin-bottom: 200px;
+    }
+
+    .socials {
+        
+        margin-left: 35px;
     }
 }
 
@@ -418,6 +406,10 @@ hr {
         padding-bottom: 100px;
         padding-top: 20px;
         font-size: 18px;
+    }
+
+    .content {
+        margin-bottom: 400px;
     }
 
     .nav {
@@ -487,9 +479,12 @@ hr {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-right: 60px;
+        margin-right: 100px;
     }
 
+    .selfie {
+        margin-right: 80px;
+    }
 
     .projects {
         display: flex;
@@ -498,7 +493,7 @@ hr {
 
     .project {
         width: 70%;
-        margin-right: 40px;
+        margin-right: 60px;
         overflow: hidden;
     }
 
@@ -513,10 +508,5 @@ hr {
 
     .cv-image a {
         font-size: 12px;
-    }
-
-    .socials {
-        width: 80%;
-        margin-bottom: 50px !important;
     }
 }
