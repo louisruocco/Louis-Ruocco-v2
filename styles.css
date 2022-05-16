@@ -193,7 +193,7 @@ hr {
 }
 
 .projects div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .project a {
@@ -232,6 +232,7 @@ hr {
     width: 50%;
     justify-content: center;
     align-items: center;
+    padding-top: 30px;
     margin: auto;
 }
 
